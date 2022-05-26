@@ -1,11 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import PokeBallButton from "./PokeBallButton";
 
 const Fight = () => {
   //{ pokemonID }
   const [firstPlayer, setFirstPlayer] = useState("");
   const [botPlayer, setBotPlayer] = useState("");
-  const[cardBackground, setCardBackground] = useState("");
   
   const startFight = "Ready to Fight!!";
   const pokemonID = 25;
@@ -96,9 +96,15 @@ const Fight = () => {
     <>
     
       <div className="container">
-        <div className="row d-flex ">
-          <div className="col-12 text-center banner">
-            <h1 className="display-1 py-5"> {startFight} </h1>
+        <div className="row d-flex justify-content-center">
+          <div className="col-6 ">
+            <img
+                src= "./banner.png"
+                alt="banner"
+              />
+            </div>
+          <div className="col-12 text-center ">
+            <h1 className="display-1 py-5  "> {startFight} </h1>
           </div>
         </div>
       </div>
@@ -129,6 +135,7 @@ const Fight = () => {
             </figure>
           </div>
         </div>
+        <PokeBallButton />
       </div>
       } 
     </>

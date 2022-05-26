@@ -12,8 +12,7 @@
 }
 
 .banner{
-  color: white;
-  background: linear-gradient(to right, #0066ff 13%, #3399ff 81%);
+  image-resolution: 10px;
 }
 
 .figure {
