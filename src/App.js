@@ -1,12 +1,11 @@
-import './App.css';
+import "./App.css";
+import Fight from "./components/Fight";
 
 function App() {
   return (
-    <div className="App">
-      <div>
-      <h1>Example heading <span className="badge bg-secondary">New</span></h1>
-      </div>
-    </div>
+    <>
+      <Fight />
+    </>
   );
 }
 
