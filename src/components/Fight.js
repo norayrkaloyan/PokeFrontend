@@ -6,6 +6,7 @@ const Fight = () => {
   //{ pokemonID }
   const [firstPlayer, setFirstPlayer] = useState("");
   const [botPlayer, setBotPlayer] = useState("");
+  //const { pokemonID } = useParams();
   
   const startFight = "Ready for the Fight!!";
   const pokemonID = 25;
@@ -13,15 +14,14 @@ const Fight = () => {
   let boterStyleClasses = ["figure-img", "img-fluid",  "rounded", "pokImage"]
   let playerStyleClasses = ["figure-img", "img-fluid",  "rounded", "pokImage"]
   
-
   useEffect(() => {
-    const randomPokemon = Math.floor(Math.random() * 809)
+    const randomPokemon = Math.floor(Math.random() * 90)
 
     const  firstPlayer =  axios.get(
-      `http://localhost:5000/api/pokemon/${pokemonID}`
+      `https://pokemonfightbackend.herokuapp.com/api/pokemons/${pokemonID}`
     );
     const botPlayer = axios.get(
-      `http://localhost:5000/api/pokemon/${randomPokemon}`
+      `https://pokemonfightbackend.herokuapp.com/api/pokemons/${randomPokemon}`
     );
     
     axios.all([firstPlayer, botPlayer]).then(
@@ -115,24 +115,40 @@ const Fight = () => {
         <div className="row d-flex my-5 justify-content-between text-center">
           <div className="col-4 ">
             <figure className="figure">
-            <h3>{firstPlayer.name.english}{firstPlayer.name.japanese}</h3>
+            <h3 className="pb-2">{firstPlayer.name.english}{firstPlayer.name.japanese}</h3>
               <img
                 src={firstPlayer.url}
                 className= {playerStyleClasses.join(" ")}
                 alt="pokemon"
               />
-              <figcaption className="figure-caption text-center"></figcaption>
+              <figcaption className="figure-caption text-start">
+              <hr/>
+                <p><strong>HP</strong> : {firstPlayer.base.HP}</p><hr/>
+                <p><strong>Attack</strong> : {firstPlayer.base.Attack}</p><hr/>
+                <p><strong>Defense</strong> : {firstPlayer.base.Defense}</p><hr/>
+                <p><strong>Sp. Attack</strong> : {firstPlayer.base["Sp. Attack"]}</p><hr/>
+                <p><strong>Sp. Defense</strong> : {firstPlayer.base["Sp. Defense"]}</p><hr/>
+                <p><strong>Speed</strong> : {firstPlayer.base.Speed}</p>
+              </figcaption>
             </figure>
           </div>
           <div className="col-4">
             <figure className="figure">
-              <h3>{botPlayer.name.english}{botPlayer.name.japanese}</h3>
+              <h3 className="pb-2">{botPlayer.name.english}{botPlayer.name.japanese}</h3>
               <img
                 src={botPlayer.url}
                 className= {boterStyleClasses.join(" ")}
                 alt="pokemon"
               />
-              <figcaption className="figure-caption text-center"></figcaption>
+              <figcaption className="figure-caption text-center">
+              <hr/>
+                <p><strong>HP</strong> : {botPlayer.base.HP}</p><hr/>
+                <p><strong>Attack</strong> : {botPlayer.base.Attack}</p><hr/>
+                <p><strong>Defense</strong> : {botPlayer.base.Defense}</p><hr/>
+                <p><strong>Sp. Attack</strong> : {botPlayer.base["Sp. Attack"]}</p><hr/>
+                <p><strong>Sp. Defense</strong> : {botPlayer.base["Sp. Defense"]}</p><hr/>
+                <p><strong>Speed</strong> : {botPlayer.base.Speed}</p>
+              </figcaption>
             </figure>
           </div>
         </div>
