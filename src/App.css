@@ -11,8 +11,10 @@
   padding: 5rem;
 }
 
-.banner{
-  image-resolution: 10px;
+h1{
+  background: linear-gradient(to left, #33ccff -10%, #ffff00 50%) !important;
+  width: auto;
+  border-radius: 70%;
 }
 
 .figure {

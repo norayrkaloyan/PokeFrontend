@@ -7,7 +7,7 @@ const Fight = () => {
   const [firstPlayer, setFirstPlayer] = useState("");
   const [botPlayer, setBotPlayer] = useState("");
   
-  const startFight = "Ready to Fight!!";
+  const startFight = "Ready for the Fight!!";
   const pokemonID = 25;
 
   let boterStyleClasses = ["figure-img", "img-fluid",  "rounded", "pokImage"]
@@ -94,7 +94,6 @@ const Fight = () => {
 
   return (
     <>
-    
       <div className="container">
         <div className="row d-flex justify-content-center">
           <div className="col-6 ">
@@ -103,8 +102,10 @@ const Fight = () => {
                 alt="banner"
               />
             </div>
-          <div className="col-12 text-center ">
-            <h1 className="display-1 py-5  "> {startFight} </h1>
+            </div>
+            <div className="row d-flex justify-content-center">
+          <div className="col-4 text-center ">
+            <h1 className="d py-5  "> {startFight} </h1>
           </div>
         </div>
       </div>
