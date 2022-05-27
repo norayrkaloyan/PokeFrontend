@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import PokeBallButton from "./PokeBallButton";
+import ProgressBar from "./ProgressBar";
 
 const Fight = () => {
   //{ pokemonID }
@@ -89,9 +90,8 @@ const Fight = () => {
     }
   }
   
-
-
-
+ 
+  
   return (
     <>
       <div className="container">
@@ -113,7 +113,7 @@ const Fight = () => {
       {(firstPlayer && botPlayer) &&
       <div className="container main">
         <div className="row d-flex my-5 justify-content-between text-center">
-          <div className="col-4 ">
+          <div className="col-4 ">          
             <figure className="figure">
             <h3 className="pb-2">{firstPlayer.name.english}{firstPlayer.name.japanese}</h3>
               <img
@@ -121,7 +121,8 @@ const Fight = () => {
                 className= {playerStyleClasses.join(" ")}
                 alt="pokemon"
               />
-              <figcaption className="figure-caption text-start">
+              <ProgressBar />
+              <figcaption className="figure-caption text-start">             
               <hr/>
                 <p><strong>HP</strong> : {firstPlayer.base.HP}</p><hr/>
                 <p><strong>Attack</strong> : {firstPlayer.base.Attack}</p><hr/>
@@ -140,14 +141,14 @@ const Fight = () => {
                 className= {boterStyleClasses.join(" ")}
                 alt="pokemon"
               />
-              <figcaption className="figure-caption text-center">
+              <figcaption className="figure-caption text-end">
               <hr/>
-                <p><strong>HP</strong> : {botPlayer.base.HP}</p><hr/>
-                <p><strong>Attack</strong> : {botPlayer.base.Attack}</p><hr/>
-                <p><strong>Defense</strong> : {botPlayer.base.Defense}</p><hr/>
-                <p><strong>Sp. Attack</strong> : {botPlayer.base["Sp. Attack"]}</p><hr/>
-                <p><strong>Sp. Defense</strong> : {botPlayer.base["Sp. Defense"]}</p><hr/>
-                <p><strong>Speed</strong> : {botPlayer.base.Speed}</p>
+                <p>{botPlayer.base.HP} : <strong>HP</strong></p><hr/>
+                <p>{botPlayer.base.Attack} : <strong>Attack</strong></p><hr/>
+                <p> {botPlayer.base.Defense} : <strong>Defense</strong></p><hr/>
+                <p> {botPlayer.base["Sp. Attack"]} : <strong>Sp. Attack</strong></p><hr/>
+                <p>{botPlayer.base["Sp. Defense"]} : <strong>Sp. Defense</strong></p><hr/>
+                <p> {botPlayer.base.Speed} : <strong>Speed</strong></p>
               </figcaption>
             </figure>
           </div>
