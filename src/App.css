@@ -1,6 +1,186 @@
-.App {
+body {
+  background-color: #eff3ff;
+}
+.container  {
+  width: 100%;
+}
+.row  {
+  width: 100%;
+}
+.pokemon-card {
+  width: 30%;
+  margin: 20px;
+}
+#card {
+  position: relative;
+  padding: 30px 20px;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+}
+#card img {
+  display: block;
+  width: 180px;
+  max-height: 200px;
+  position: relative;
+  margin: 20px auto;
+}
+.hp {
+  width: 80px;
+  background-color: #ffffff;
+  text-align: center;
+  padding: 8px 0;
+  border-radius: 30px;
+  margin-left: auto;
+  font-weight: 400;
+}
+.hp span:nth-child(2) {
+  font-size: 20px;
+  font-weight: bold;
+}
+.poke-name {
+  text-align: center;
+  font-weight: 600;
+}
+.types {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0 40px 0;
+}
+.hp span,
+.types span {
+  font-size: 12px;
+  letter-spacing: 0.4px;
+  font-weight: 600;
+}
+.types span {
+  padding: 5px 20px;
+  border-radius: 20px;
+  color: #ffffff;
+}
+.stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   text-align: center;
 }
+<<<<<<< HEAD
+.stats p {
+  color: #404060;
+}
+#btn {
+  display: block;
+  padding: 15px 60px;
+  font-size: 18px;
+  background-color: #101010;
+  color: #ffffff;
+  position: relative;
+  margin: 30px auto;
+  border: none;
+  border-radius: 5px;
+}
+.pokemon-button {
+  text-align: center;
+}
+
+
+  .bug  {
+    background: radial-gradient(circle at 50% 0%, #26de81 36%, #ffffff 36%);
+  }
+  .dragon  {
+    background: radial-gradient(circle at 50% 0%, #ffeaa7 36%, #ffffff 36%);
+  }
+  .electric  {
+    background: radial-gradient(circle at 50% 0%, #fed330 36%, #ffffff 36%);
+  }
+  .fairy  {
+    background: radial-gradient(circle at 50% 0%, #FF0069 36%, #ffffff 36%);
+  }
+  .fighting  {
+    background: radial-gradient(circle at 50% 0%, #30336b 36%, #ffffff 36%);
+  }
+  .fire  {
+    background: radial-gradient(circle at 50% 0%, #f0932b 36%, #ffffff 36%);
+  }
+  .flying  {
+    background: radial-gradient(circle at 50% 0%, #81ecec 36%, #ffffff 36%);
+  }
+  .grass  {
+    background: radial-gradient(circle at 50% 0%, #00b894 36%, #ffffff 36%);
+  }
+  .ground  {
+    background: radial-gradient(circle at 50% 0%, #EFB549 36%, #ffffff 36%);
+  }
+  .ghost  {
+    background: radial-gradient(circle at 50% 0%, #a55eea 36%, #ffffff 36%);
+  }
+  .ice  {
+    background: radial-gradient(circle at 50% 0%, #74b9ff 36%, #ffffff 36%);
+  }
+  .normal  {
+    background: radial-gradient(circle at 50% 0%, #95afc0 36%, #ffffff 36%);
+  }
+  .poison  {
+    background: radial-gradient(circle at 50% 0%, #6c5ce7 36%, #ffffff 36%);
+  }
+  .psychic  {
+    background: radial-gradient(circle at 50% 0%, #a29bfe 36%, #ffffff 36%);
+  }
+  .rock  {
+    background: radial-gradient(circle at 50% 0%, #2d3436 36%, #ffffff 36%);
+  }
+  .water  {
+    background: radial-gradient(circle at 50% 0%, #0190FF 36%, #ffffff 36%);
+  }
+
+  .bug-button  {
+    background: #26de81;
+  }
+  .dragon-button  {
+    background: #ffeaa7;
+  }
+  .electric-button  {
+    background: #fed330;
+  }
+  .fairy-button  {
+    background: #FF0069;
+  }
+  .fighting-button  {
+    background: #30336b;
+  }
+  .fire-button  {
+    background: #f0932b;
+  }
+  .flying-button  {
+    background: #81ecec;
+  }
+  .grass-button  {
+    background: #00b894;
+  }
+  .ground-button  {
+    background: #EFB549;
+  }
+  .ghost-button  {
+    background: #a55eea;
+  }
+  .ice-button  {
+    background: #74b9ff;
+  }
+  .normal-button  {
+    background: #95afc0;
+  }
+  .poison-button  {
+    background: #6c5ce7;
+  }
+  .psychic-button {
+    background: #a29bfe;
+  }
+  .rock-button  {
+    background: #2d3436;
+  }
+  .water-button  {
+    background: #0190FF;
+  }
+=======
 
 .pokImage{
   height: 20rem;
@@ -63,3 +243,4 @@
 .electric{
   background-image: url('../public/electric.png');
 }
+>>>>>>> 68b68912ac47232e61a980c782510a5ef615ce48
