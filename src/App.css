@@ -63,7 +63,6 @@ body {
   justify-content: space-between;
   text-align: center;
 }
-<<<<<<< HEAD
 .stats p {
   color: #404060;
 }
@@ -180,7 +179,6 @@ body {
   .water-button  {
     background: #0190FF;
   }
-=======
 
 .pokImage{
   height: 20rem;
@@ -243,4 +241,3 @@ body {
 .electric{
   background-image: url('../public/electric.png');
 }
->>>>>>> 68b68912ac47232e61a980c782510a5ef615ce48
