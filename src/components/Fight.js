@@ -12,8 +12,8 @@ const Fight = () => {
   const startFight = "Ready for the Fight!!";
   const pokemonID = 25;
 
-  let boterStyleClasses = ["figure-img", "img-fluid",  "rounded", "pokImage"]
-  let playerStyleClasses = ["figure-img", "img-fluid",  "rounded", "pokImage"]
+  // let boterStyleClasses = ["figure-img", "img-fluid",  "rounded", "pokImage"]
+  // let playerStyleClasses = ["figure-img", "img-fluid",  "rounded", "pokImage"]
   
   useEffect(() => {
     const randomPokemon = Math.floor(Math.random() * 90)
@@ -33,62 +33,62 @@ const Fight = () => {
     )//.catch(res => res.status(404).then(err => err.send("This pokemon iost not availabe, please choose another pokemon!")))
   }, []);
 
-  /*Change the Background Image for Cards*/
-  if(firstPlayer && botPlayer){
-    const firstPlayerType = firstPlayer.type[0]
-    switch(firstPlayerType){
-      case "Electric": playerStyleClasses.push("electric")
-      break;
-      case "Water": playerStyleClasses.push("water")
-      break;
-      case "Steel": playerStyleClasses.push("steel")
-      break;
-      case "Rock": playerStyleClasses.push("rock")
-      break;
-      case "Poison": playerStyleClasses.push("poison")
-      break;
-      case "Ice": playerStyleClasses.push("ice")
-      break;
-      case "Ground": playerStyleClasses.push("ground")
-      break;
-      case "Grass": playerStyleClasses.push("grass")
-      break;
-      case "Flying": playerStyleClasses.push("flying")
-      break;
-      case "Fire": playerStyleClasses.push("fire")
-      break;
-      case "Fairy": playerStyleClasses.push("fairy")
-      break;
-      default: playerStyleClasses.push("")
-    }
+  // /*Change the Background Image for Cards*/
+  // if(firstPlayer && botPlayer){
+  //   const firstPlayerType = firstPlayer.type[0]
+  //   switch(firstPlayerType){
+  //     case "Electric": playerStyleClasses.push("electric")
+  //     break;
+  //     case "Water": playerStyleClasses.push("water")
+  //     break;
+  //     case "Steel": playerStyleClasses.push("steel")
+  //     break;
+  //     case "Rock": playerStyleClasses.push("rock")
+  //     break;
+  //     case "Poison": playerStyleClasses.push("poison")
+  //     break;
+  //     case "Ice": playerStyleClasses.push("ice")
+  //     break;
+  //     case "Ground": playerStyleClasses.push("ground")
+  //     break;
+  //     case "Grass": playerStyleClasses.push("grass")
+  //     break;
+  //     case "Flying": playerStyleClasses.push("flying")
+  //     break;
+  //     case "Fire": playerStyleClasses.push("fire")
+  //     break;
+  //     case "Fairy": playerStyleClasses.push("fairy")
+  //     break;
+  //     default: playerStyleClasses.push("")
+  //   }
 
-    const botPlayerType = botPlayer.type[0]
-    switch(botPlayerType){
-      case "Electric": boterStyleClasses.push("electric")
-      break;
-      case "Water": boterStyleClasses.push("water")
-      break;
-      case "Steel": boterStyleClasses.push("steel")
-      break;
-      case "Rock": boterStyleClasses.push("rock")
-      break;
-      case "Poison": boterStyleClasses.push("poison")
-      break;
-      case "Ice": boterStyleClasses.push("ice")
-      break;
-      case "Ground": boterStyleClasses.push("ground")
-      break;
-      case "Grass": boterStyleClasses.push("grass")
-      break;
-      case "Flying": boterStyleClasses.push("flying")
-      break;
-      case "Fire": boterStyleClasses.push("fire")
-      break;
-      case "Fairy": boterStyleClasses.push("fairy")
-      break;
-      default: boterStyleClasses.push("")
-    }
-  }
+  //   const botPlayerType = botPlayer.type[0]
+  //   switch(botPlayerType){
+  //     case "Electric": boterStyleClasses.push("electric")
+  //     break;
+  //     case "Water": boterStyleClasses.push("water")
+  //     break;
+  //     case "Steel": boterStyleClasses.push("steel")
+  //     break;
+  //     case "Rock": boterStyleClasses.push("rock")
+  //     break;
+  //     case "Poison": boterStyleClasses.push("poison")
+  //     break;
+  //     case "Ice": boterStyleClasses.push("ice")
+  //     break;
+  //     case "Ground": boterStyleClasses.push("ground")
+  //     break;
+  //     case "Grass": boterStyleClasses.push("grass")
+  //     break;
+  //     case "Flying": boterStyleClasses.push("flying")
+  //     break;
+  //     case "Fire": boterStyleClasses.push("fire")
+  //     break;
+  //     case "Fairy": boterStyleClasses.push("fairy")
+  //     break;
+  //     default: boterStyleClasses.push("")
+  //   }
+  // }
   
  
   
@@ -118,7 +118,7 @@ const Fight = () => {
             <h3 className="pb-2">{firstPlayer.name.english}{firstPlayer.name.japanese}</h3>
               <img
                 src={firstPlayer.url}
-                className= {playerStyleClasses.join(" ")}
+                className= {"figure-img img-fluid  rounded pokImage" + " " + firstPlayer.type[0].toLowerCase()}
                 alt="pokemon"
               />
               <ProgressBar />
@@ -138,9 +138,10 @@ const Fight = () => {
               <h3 className="pb-2">{botPlayer.name.english}{botPlayer.name.japanese}</h3>
               <img
                 src={botPlayer.url}
-                className= {boterStyleClasses.join(" ")}
+                className= {"figure-img img-fluid  rounded pokImage" + " " + botPlayer.type[0].toLowerCase()}
                 alt="pokemon"
               />
+              <ProgressBar />
               <figcaption className="figure-caption text-end">
               <hr/>
                 <p>{botPlayer.base.HP} : <strong>HP</strong></p><hr/>
