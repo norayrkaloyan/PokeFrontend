@@ -4,7 +4,6 @@ import Results from './components/Results';
 import { Routes, Route} from 'react-router-dom';
 import Fight from './components/Fight.js';
 
-
 function App() {
 
   return (

@@ -189,9 +189,10 @@ body {
   padding: 5rem;
 }
 
-.banner{
-  color: white;
-  background: linear-gradient(to right, #0066ff 13%, #3399ff 81%);
+h1{
+  background: linear-gradient(to left, #33ccff -10%, #ffff00 50%) !important;
+  width: auto;
+  border-radius: 70%;
 }
 
 .figure {
@@ -240,4 +241,9 @@ body {
 }
 .electric{
   background-image: url('../public/electric.png');
+}
+
+.progressWidth{
+  width: 100% ;
+  background-color: #39FF14 !important;
 }
