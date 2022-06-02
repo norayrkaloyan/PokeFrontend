@@ -343,3 +343,26 @@ header {
   background-repeat: no-repeat;
   position: relative;
 }
+
+.daten{
+  display:flex;
+  justify-content: space-between;
+}
+
+.attacker{
+  display:flex;
+  justify-content: center;
+}
+
+.won-loose{
+  display:flex;
+  justify-content: center;
+}
+.newGame{
+  display: flex;
+  justify-content: center;
+  margin-left: 20%;
+}
+.youwon{
+  margin-bottom: 1rem;
+}
