@@ -3,7 +3,6 @@ import "../pokeBall.css";
 import { useState } from "react";
 import Progress from "./ProgressBarMb";
 import Blackboard from "./Blackboard";
-import { useNavigate } from "react-router-dom";
 
 const PokeBallButton = (props) => {
   const [firstPlayerDamage, setFirstPlayerDamage] = useState();
@@ -13,9 +12,8 @@ const PokeBallButton = (props) => {
   const [firstPlayerHealth, setFirstPlayerHealth] = useState();
   const [botPlayerHealth, setBotPlayerHealth] = useState();
   const [attack,setAttack] = useState();
-  const [damage,setDamage] = useState();
+  // const [damage,setDamage] = useState();
 
-  const navigate = useNavigate();
 
   useEffect(() => {
     setBotPlayerDamage(
@@ -54,7 +52,7 @@ const PokeBallButton = (props) => {
     setFirstPlayerHealth(100);
     setBotPlayerHealth(100);
     setAttack(getFirstAttack());
-    setDamage(botPlayerDamage - firstPlayerDefense);
+    // setDamage(botPlayerDamage - firstPlayerDefense);
 
   }, [props.botPlayer.base, props.firstPlayer.base]);
 
@@ -64,11 +62,11 @@ const PokeBallButton = (props) => {
 
   const fight = () => {
     setAttack(getFirstAttack());
-    setDamage(botPlayerDamage - firstPlayerDefense);
+    // setDamage(botPlayerDamage - firstPlayerDefense);
 
     
     if (attack) {
-      // let damage = botPlayerDamage - firstPlayerDefense;
+      let damage = botPlayerDamage - firstPlayerDefense;
       if (damage > 0) {
         if (damage >= firstPlayerHealth) {
           damage = firstPlayerHealth;
@@ -141,7 +139,7 @@ const PokeBallButton = (props) => {
           playerName={props.firstPlayer.name.english}
           botName={props.botPlayer.name.english}
           attack={attack}
-          damage={damage}
+          // damage={damage}
         />}
 
         <div className="col-sm-4 text-center pokemon-picture">

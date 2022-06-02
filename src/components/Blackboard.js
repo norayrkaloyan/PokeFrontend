@@ -1,4 +1,4 @@
-import PokeBallButton from "./PokeBallButton.js";
+// import PokeBallButton from "./PokeBallButton.js";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -12,8 +12,8 @@ const Blackboard = ({
 }) => {
   const [newFirstPlayerHealth, setNewFirstPlayerHealth] = useState(100);
   const [newBotPlayerHealth, setNewBotPlayerHealth] = useState(100);
-  const [playerDamage, setPlayerDamage] = useState();
-  const [botDamage, setBotDamage] = useState();
+  // const [playerDamage, setPlayerDamage] = useState();
+  // const [botDamage, setBotDamage] = useState();
   const [attacking, setAttacking] = useState();
   const [attacker, setAttacker] = useState("");
   const navigate = useNavigate();
@@ -22,8 +22,8 @@ const Blackboard = ({
     setNewFirstPlayerHealth(firstPlayerHealth);
     setNewBotPlayerHealth(botPlayerHealth);
     setAttacking(attack);
-    setPlayerDamage(damage);
-  }, [firstPlayerHealth, botPlayerHealth, damage, attack, attacker]);
+    // setPlayerDamage(damage);
+  }, [firstPlayerHealth, botPlayerHealth, attack, attacker]);
 
   console.log(attacking, attacker, botName, playerName);
 
