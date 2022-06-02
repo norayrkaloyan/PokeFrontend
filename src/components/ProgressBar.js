@@ -1,10 +1,10 @@
 
-const ProgressBar = () => {
+const ProgressBar = ({id}) => {
     
   return (
     <>
-   <div class="progress">
-    <div class="progress-bar progress-bar progressWidth" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+   <div className="progress">
+    <div className={`progress-bar progress-bar progressWidth progressBar-${id}`} role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
     </>

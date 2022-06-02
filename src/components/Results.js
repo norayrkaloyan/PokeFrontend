@@ -27,7 +27,6 @@ const Results = () => {
       .get(url)
       .then((response) => {
         setResults(response.data)
-        console.log(response)
         if (response.data === 0) {
           alert(
             "There are no news matching your search. Please try another search term."
@@ -42,18 +41,24 @@ const Results = () => {
   };
 
   return (
+    <>
+    <header>
+    <img src="./banner.png" id="header-img" alt="banner"/>
+    </header>
     <main className="d-flex justify-content-center pb-5">
     <div className="row">
       {results ? (
         results
           .slice(indexOfFirstArticle, indexOfLastArticle)
           .map((result) => (
-            <div className={"pokemon-card " + result.type[0].toLowerCase()} id="card" key={result.id}>
+            <div className={`pokemon-card ${result.type[0].toLowerCase()}`} id="card" key={result.id}>
                 <p className="hp">
                     <span>HP</span>
                     <span>{result.base.HP}</span>
                 </p>
+            <div className="pokemon-image">
             <img src={result.url} alt="pokemon"/>
+            </div>
             <h2 className="poke-name">{result.name.english}</h2>
             <div className="types">
             </div>
@@ -72,12 +77,14 @@ const Results = () => {
             </div>
             </div>
             <div className="pokemon-button">
-              <Link to={`/${result.id}`} className={"btn " + result.type[0].toLowerCase() +"-button"}>Auswählen</Link>
+              <Link to={`/${result.id}`} className={`btn ${result.type[0].toLowerCase()}-button`}>Auswählen</Link>
             </div>
             </div>
           ))
       ) : (
-        <ClipLoader color="purple" size={150} />
+        <div className="spinner-container">
+          <ClipLoader color="purple" size={150} />
+        </div>
       )}
       {results && (
         <Pagination
@@ -88,6 +95,7 @@ const Results = () => {
       )}
     </div>
     </main>
+    </>
   );
 };
 
